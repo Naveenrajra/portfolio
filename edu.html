@@ -6,37 +6,174 @@
     <title>portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<style>
+    .card-deck {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 150px;
+}
+
+.card {
+    margin: 20px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+    background-image: linear-gradient(rgb(102, 174, 216), white);
+}
+
+.card-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.card-text {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .card-deck {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+        margin: 15px 0;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        text-align: center;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .navbar a {
+        margin: 10px 0;
+        padding: 10px 0;
+        font-size: 18px;
+    }
+
+    .header {
+        padding: 10px 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+
+    .card img {
+        height: 150px;
+    }
+
+    .card-body {
+        padding: 10px;
+    }
+
+    .card-title {
+        font-size: 16px;
+    }
+
+    .card-text {
+        font-size: 14px;
+    }
+
+    .menu-icon {
+        font-size: 24px;
+    }
+
+    .navbar a {
+        font-size: 16px;
+    }
+
+    .header {
+        padding: 10px 3%;
+    }
+}
+</style>
 <body>
-    <header>
     <header class="header">
         <a href="index.html" class="logo">R A NAVEENRAJ</a>
         <nav class="navbar">
-            
-            
-            <a href="edu.html">Eduction</a>
+            <a href="edu.html">Education</a>
             <a href="project.html">Projects</a> 
             <a href="skill.html">Skills</a> 
-            <a href="https://drive.google.com/file/d/1lLOLo93sg3YF9pVJ1XC8qwDqZV_hE2qg/view?usp=drive_link">Resume</a>
-
+            <a href="https://drive.google.com/file/d/1E9fLCrBvBxn1VycdZjNECPgXQs8x4X8e/view?usp=drive_link">Resume</a>
         </nav>
         <a href="contact.html" class="contact">Contact me</a>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div> <!-- Hamburger Icon -->
     </header>
-    <section class="educ">
-        <div class="edu-img1" style="margin-right: 20px;">
-            <img src="gce.webp" alt="" style="width: 300px;height: 300px;">
-            <h2>Government College of Engineering,Erode</h2>
-            <p><span style="color: orangered;" >B.E Computer Science and Engineering</span><br>CGPA:8.23(up to 7th sem)</p>
-        </div>
-        <div class="edu-img2" style="margin-right: 20px;">
-            <img src="sen.jpg" alt="" style="width: 300px;height: 300px;">
-            <h2>Sengunthar Matric Higher Secondary School,Salem</h2>
-            <p><span  style="color: orangered;">HSC</span><br>Percentage:83.8%</p>
-        </div>
-        <div class="edu-img3" style="margin-right: 20px;">
-            <img src="grms.jpg" alt="" style="width: 300px;height: 300px;">
-            <h2>Golden Rays Matriculation School,Salem</h2>
-            <p><span style="color: orangered;">SSC</span><br>Percentage:95.5%</p>
-        </div>
 
-    </section>
-    
+    <div class="container my-5">
+        <div class="card-deck" >
+            <div class="card">
+                <img src="grms.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h3 class="card-title">Golden Rays Matriculation School,Salem</h3>
+                    <h4 class="card-title" style="margin-top: 8px;">SSC</h4>
+                    <p class="card-text"  style="margin-top: 8px;">Percentage-95%</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="sen.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h3 class="card-title">Sengunthar Matric Hr Sec School,Salem</h3>
+                    <h4 class="card-title" style="margin-top: 8px;">HSC</h4>
+                    <p class="card-text"  style="margin-top: 8px;">Percentage-83%</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="gce.webp" class="card-img-top">
+                <div class="card-body">
+                    <h3 class="card-title">Government College of Engineering,Erode</h3>
+                    <h4 class="card-title"  style="margin-top: 8px;">B.E Computer Science and Engineering</h4>
+                    <p class="card-text"  style="margin-top: 8px;">CGPA-8.23</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // JavaScript function to toggle the menu on mobile devices
+        function toggleMenu() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
+

@@ -6,29 +6,68 @@
     <title>portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<style>
+     .card {
+        margin: 20px;
+
+    }
+    .card img {
+        height: 250px;
+        width: 330px;
+        object-fit: cover;
+    }
+    
+    .card-body{
+        background-image: linear-gradient(rgb(228, 224, 222),white);
+        margin-bottom: 5px;
+    }
+    .card-deck{
+        margin-top: 30px;
+    }
+</style>
 <body>
-    <header>
     <header class="header">
         <a href="index.html" class="logo">R A NAVEENRAJ</a>
         <nav class="navbar">
-            
-            
-            <a href="edu.html">Eduction</a>
+            <a href="edu.html">Education</a>
             <a href="project.html">Projects</a> 
             <a href="skill.html">Skills</a> 
-            <a href="https://drive.google.com/file/d/1lLOLo93sg3YF9pVJ1XC8qwDqZV_hE2qg/view?usp=drive_link">Resume</a>
-
+            <a href="https://drive.google.com/file/d/1E9fLCrBvBxn1VycdZjNECPgXQs8x4X8e/view?usp=drive_link">Resume</a>
         </nav>
         <a href="contact.html" class="contact">Contact me</a>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div> <!-- Hamburger Icon -->
     </header>
-    <section class="project">
-        <div class="pro-des">
-            <div class="pro-img" >
-              <img src="book.jpg" alt="" style="width: 320px;height: 320px; margin-left: 410px;">
+        <div class="container my-5" style="display: flex; justify-content: center;flex-wrap: wrap;margin-top: 100px;">
+            <div class="card-deck" >
+                <div class="card">
+                    <img src="book.jpg" class="card-img-top">
+                    <div class="card-body">
+                        <h2 class="card-title">Online Bookhub</h2>
+                        <h4 class="card-title" style="margin-top: 8px;color: orangered">HTML,CSS,Javascript,Python</h4>
+                        <p class="card-text"  style="margin-top: 8px;width: 330px;letter-spacing: 1px;">A user-friendly Online Bookstore project in which users can log in or register, view the available books, select books along with their quantity, and buy them. Users can also get payment receipts after successful payment. The project can also be used by the administrator, who can add new books, remove books, increase and decrease the quantity of books, change the price of the books as well as maintain the selling history of books.</p>
+                        <button class="gith" style="margin-top: 10px;display: flex; align-items: center;"><a href="https://github.com/Naveenrajra/video-format.git">Github</a></button>
+                    </div>
+                </div>
             </div>
-            <h2 style="text-align: center; ">Online Bookhub</h2>
-            <h3 style="text-align: center;padding: 10px;color: orangered;">HTML,CSS,Javascript,Python</h3>
-            <p style="letter-spacing: 1px;">A user-friendly Online Bookstore project in which users can log in or register, view the available books, select books along with their quantity, and buy them. Users can also get payment receipts after successful payment. The project can also be used by the administrator, who can add new books, remove books, increase and decrease the quantity of books, change the price of the books as well as maintain the selling history of books.</p>
-            <button class="gith"><a href="https://github.com/Naveenrajra/video-format.git">Github</a></button>
+            <div class="card-deck" >
+                <div class="card">
+                    <img src="res1.jpeg" class="card-img-top">
+                    <div class="card-body">
+                        <h2 class="card-title">Veggie Restaurant</h2>
+                        <h4 class="card-title" style="margin-top: 8px;color: orangered">HTML,CSS,Javascript,Bootstrap</h4>
+                        <p class="card-text"  style="margin-top: 8px;width: 330px;letter-spacing: 1px;">A user-friendly Online Bookstore project in which users can log in or register, view the available books, select books along with their quantity, and buy them. Users can also get payment receipts after successful payment. The project can also be used by the administrator, who can add new books, remove books, increase and decrease the quantity of books, change the price of the books as well as maintain the selling history of books.</p>
+                        <button class="gith" style="margin-top: 10px;"><a href="https://veggiereataurant.netlify.app/">Live Demo</a></button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+        <script>
+            // JavaScript function to toggle the menu on mobile devices
+            function toggleMenu() {
+                const navbar = document.querySelector('.navbar');
+                navbar.classList.toggle('active');
+            }
+        </script>
+</body>
+</html>
+   
